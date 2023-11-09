@@ -1,8 +1,8 @@
 from django.urls import path 
-from prendas.views import prendas, PrendasRopa
+from prendas.views import prendas, agregoprendas, PrendasRopa
 
 
 urlpatterns = [
-    path('', prendas),
-    path('prendasropa/', PrendasRopa)
+    path('prendas', prendas),
+    path('agregoprendas/', agregoprendas)
 ]

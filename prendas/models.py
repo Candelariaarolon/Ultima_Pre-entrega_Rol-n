@@ -4,7 +4,7 @@ from django.db import models
 
 
 class PrendasRopa(models.Model):
-    Marca = models.Charfield(max_length=30)
+    Marca = models.CharField(max_length=30)
     Talle = models.IntegerField
-    Descripcion = models.Textfield()
+    Descripcion = models.TextField()
     Temporada = models.IntegerField

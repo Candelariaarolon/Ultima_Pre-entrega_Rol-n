@@ -1,8 +1,12 @@
 from django.urls import path 
-from inicio.views import inicio
+from inicio.views import inicio, usuarios
+
 
 
 urlpatterns = [
-    path('', inicio),
+    path('inicio/', inicio),
+    path ('usuarios/', usuarios)
     
 ]
+
+
