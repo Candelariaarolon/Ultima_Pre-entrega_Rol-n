@@ -24,7 +24,9 @@
         <!-- Navigation-->
         <nav class="navbar navbar-light bg-light static-top">
             <div class="container">
-                <a class="navbar-brand" href="#!">Compra y venta de ropa</a>
+                <a class="navbar-brand" href={% url "inicio" %}>Inicio</a>
+                <a class="navbar-brand" href={% url "usuarios" %}>Usuario</a>
+                <!--le pongo el nombre que le puse al path que nos lleva a eso en inicio urls.py -->
                 <a class="btn btn-primary" href="#Iniciar sesión">Iniciar sesión</a>
             </div>
         </nav>
