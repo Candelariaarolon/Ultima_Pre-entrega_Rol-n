@@ -15,3 +15,7 @@ class RegistroUsuarioForm(forms.ModelForm):
         if commit:
             user.save()
         return user
+    
+class LoginForm(forms.Form):
+    email = forms.EmailField(label='Email')
+    contrasena = forms.CharField(label='Contraseña', widget=forms.PasswordInput)
