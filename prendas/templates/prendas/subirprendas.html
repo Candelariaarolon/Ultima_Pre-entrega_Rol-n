@@ -1,6 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<nav class="navbar navbar-light bg-light static-top">
+    <div class="container">
+        <a class="navbar-brand" href="{% url 'inicio' %}">Vintage Store</a>
+        <a class="navbar-brand" href="{% url 'prendas' %}">Comprar</a>
+        <a class="navbar-brand" href="{% url "subir_prenda" %}">Vender</a>
+        <a class="navbar-brand" href="{% url 'registro_usuario' %}">Registrarme</a>
+        <a class="navbar-brand" href="{% url 'iniciar_sesion' %}">Iniciar Sesión</a>
+        <a class="btn btn-primary" href="#Iniciar sesión">Iniciar sesión</a>
+    </div>
+</nav>
+
+
 {% if user.is_authenticated %}
     <p>Bienvenido, {{ user.email }}</p>
     <!-- Contenido adicional para usuarios autenticados -->
 {% else %}
-    <p>Por favor, <a href="{% url 'inicio_sesion' %}">inicia sesión</a> para acceder.</p>
+    <p>Por favor, <a href="{% url 'iniciar_sesion' %}">inicia sesión</a> para acceder.</p>
 {% endif %}
+
+<head>
+    <title>Subir Prenda</title>
+</head>
+<body>
+    <h1>Subir Prenda</h1>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Guardar Prenda</button>
+    </form>
+</body>
+</html>

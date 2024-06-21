@@ -36,7 +36,7 @@ def registrar_usuario(request):
             registrado = True
             # Redirigir según el tipo de usuario
             if usuario.tipo_usuario == 'admin':
-                return redirect('agregar_producto')
+                return redirect('subir_prenda')
             else:
                 return redirect('pagina_principal')
     else:

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<nav class="navbar navbar-light bg-light static-top">
+        <div class="container">
+            <a class="navbar-brand" href="{% url 'inicio' %}">Vintage Store</a>
+            <a class="navbar-brand" href="{% url 'prendas' %}">Comprar</a>
+            <a class="navbar-brand" href="{% url "nuevos_ingresos" %}">NEW IN</a>
+            <a class="navbar-brand" href="{% url "subir_prenda" %}">Vender</a>
+            <a class="navbar-brand" href="{% url 'registro_usuario' %}">Registrarme</a>
+            <a class="navbar-brand" href="{% url 'iniciar_sesion' %}">Iniciar Sesión</a>
+            <a class="btn btn-primary" href="#Iniciar sesión">Iniciar sesión</a>
+        </div>
+</nav>
+
+<head>
+    <title>Nuevos Ingresos</title>
+</head>
+<body>
+    <h1>Nuevos Ingresos</h1>
+    <ul>
+        {% for prenda in nuevas_prendas %}
+            <li>
+                <h2>{{ prenda.Titulo }}</h2>
+                <p>{{ prenda.Marca }}</p>
+                <p>{{ prenda.Descripcion }}</p>
+                <p>Vendedor: {{ prenda.Vendedor }}</p>
+                <p>Fecha: {{ prenda.Fecha }}</p>
+                <p>Precio: {{ prenda.Precio }}</p>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
