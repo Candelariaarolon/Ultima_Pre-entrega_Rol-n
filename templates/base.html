@@ -3,6 +3,7 @@
    
     <head>
         {% load static %}
+       
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
@@ -24,8 +25,12 @@
         <!-- Navigation-->
         <nav class="navbar navbar-light bg-light static-top">
             <div class="container">
-                <a class="navbar-brand" href={% url "inicio" %}>Inicio</a>
-                <a class="navbar-brand" href={% url "usuarios" %}>Usuario</a>
+                <a class="navbar-brand" href={% url "inicio" %}>Vintage Store</a>
+                <a class="navbar-brand" href={% url "registro_usuario" %}>Iniciar Sesión</a>
+                <a class="navbar-brand" href={% url "prendas" %}>Comprar</a>
+                
+                
+         
                 <!--le pongo el nombre que le puse al path que nos lleva a eso en inicio urls.py -->
                 <a class="btn btn-primary" href="#Iniciar sesión">Iniciar sesión</a>
             </div>

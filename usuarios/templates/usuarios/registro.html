@@ -1,0 +1,18 @@
+{% extends 'basedef.html' %}
+
+{% block title_head %}
+<title>Registro de Usuario</title>
+{% endblock title_head %}
+
+{% block contenido_encabezado %}
+<!-- Tu imagen de fondo u otro contenido del encabezado -->
+<h2>Registro de Usuario</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Registrar</button>
+</form>
+{% if registrado %}
+    <p>Se ha registrado con éxito.</p>
+{% endif %}
+{% endblock contenido_encabezado %}

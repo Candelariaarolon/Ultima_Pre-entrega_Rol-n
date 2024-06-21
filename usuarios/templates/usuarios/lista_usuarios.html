@@ -1,0 +1,17 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="" content="">
+    <title>Comprar</title>
+</head>
+<body>
+    <ul>
+        {% for Usuario in lista_usuarios %}
+        <li> {{Usuario.nombre}} - {{Usuario.email}} - {{Usuario.tipo_usuario}} </li>
+        {% endfor %}
+    </ul>
+
+</body>
+</html>

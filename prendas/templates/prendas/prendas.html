@@ -1,3 +1,10 @@
+{% extends "base2.html" %}
+
+{% block h1_header  %}
+The Vintage Store: Comprar
+{% endblock h1_header %}
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,6 +13,7 @@
     <title>Prendas</title>
 </head>
 <body>
+    <h1>Bienvenido {{ usuario.nombre }} {{usuario.apellido}} . Que disfrutes tu dia de shopping. </h1>
     <h1>Se subió la prenda {{botas.marca}} exitosamente!</h1>
     
 </body>

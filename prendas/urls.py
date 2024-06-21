@@ -3,6 +3,7 @@ from prendas.views import prendas, agregoprendas, PrendasRopa
 
 
 urlpatterns = [
-    path('prendas', prendas),
+    
+    path('', prendas, name='prendas'),
     path('agregoprendas/', agregoprendas)
 ]
