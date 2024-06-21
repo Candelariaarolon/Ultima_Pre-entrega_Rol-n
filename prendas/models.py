@@ -12,3 +12,11 @@ class PrendasRopa(models.Model):
  
     def __str__(self):
         return self.Titulo
+    
+class Comentario(models.Model):
+    prenda = models.ForeignKey(PrendasRopa, related_name='comentarios', on_delete=models.CASCADE)
+    texto = models.TextField()
+    fecha = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"Comentario de {self.prenda.Titulo} ({self.fecha})"

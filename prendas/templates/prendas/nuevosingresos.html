@@ -14,6 +14,17 @@
                 <p>Vendedor: {{ prenda.Vendedor }}</p>
                 <p>Fecha: {{ prenda.Fecha }}</p>
                 <p>Precio: {{ prenda.Precio }}</p>
+                <!-- Formulario de comentario -->
+                <form method="POST" action="{% url 'guardar_comentario' prenda.id %}">
+                    {% csrf_token %}
+                    <input type="text" name="comentario" placeholder="Escribe tu comentario aquí" required>
+                    <button type="submit">Enviar comentario</button>
+                </form>
+                <div class="comentarios">
+                    {% for comentario in prenda.comentarios.all %}
+                        <p>{{ comentario.texto }}</p>
+                    {% endfor %}
+                </div>
             </div>
         {% endfor %}
     </div>
