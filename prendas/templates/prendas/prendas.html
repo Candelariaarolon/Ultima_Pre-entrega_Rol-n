@@ -1,21 +1,13 @@
 {% extends "base2.html" %}
+{% load static %}
 
-{% block h1_header  %}
+{% block h1_header %}
 The Vintage Store: Comprar
 {% endblock h1_header %}
 
 
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="description" content="Una página web simple">
-    <title>Prendas</title>
-</head>
-<body>
-    <h1>Bienvenido {{ usuario.nombre }} {{usuario.apellido}} . Que disfrutes tu dia de shopping. </h1>
-    <h1>Se subió la prenda {{botas.marca}} exitosamente!</h1>
-    
-</body>
-</html>
 
+{% block content %}
+<h1>Bienvenido {{ Usuario.nombre }} {{ Usuario.apellido }}. Que disfrutes tu día de shopping.</h1>
+
+{% endblock content %}

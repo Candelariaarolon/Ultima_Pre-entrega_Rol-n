@@ -7,5 +7,4 @@ urlpatterns = [
     path('pagina-principal/', pagina_principal, name='pagina_principal'),
     path('iniciar-sesion/', iniciar_sesion, name='iniciar_sesion'), 
     
-    
 ]
