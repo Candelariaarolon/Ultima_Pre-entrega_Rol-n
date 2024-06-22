@@ -1,6 +1,5 @@
 from django import forms
-from .models import Usuario 
-
+from .models import Usuario
 
 class RegistroUsuarioForm(forms.ModelForm):
     contrasena = forms.CharField(widget=forms.PasswordInput)
@@ -15,7 +14,7 @@ class RegistroUsuarioForm(forms.ModelForm):
         if commit:
             user.save()
         return user
-    
+
 class LoginForm(forms.Form):
     email = forms.EmailField(label='Email')
     contrasena = forms.CharField(label='Contraseña', widget=forms.PasswordInput)

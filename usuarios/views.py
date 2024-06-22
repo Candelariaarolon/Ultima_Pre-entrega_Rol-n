@@ -2,31 +2,13 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth import authenticate, login 
 from .models import Usuario
-from django import forms
-from .forms import LoginForm
+from .forms import LoginForm, RegistroUsuarioForm
 
-class RegistroUsuarioForm(forms.ModelForm):
-    contrasena = forms.CharField(widget=forms.PasswordInput)
-
-    class Meta:
-        model = Usuario
-        fields = ['email', 'nombre', 'apellido', 'contrasena', 'tipo_usuario']
-
-    def save(self, commit=True):
-        user = super().save(commit=False)
-        user.set_password(self.cleaned_data["contrasena"])
-        if commit:
-            user.save()
-        return user
-    
-    
 def agregar_producto(request):
-    
     return HttpResponse("Agregar nuevos productos: ")
 
 def pagina_principal(request):
-    
-    return HttpResponse("Bienvenidos a tu dia de Shopping, desde la comodidad de tu casa. ")
+    return HttpResponse("Bienvenidos a tu día de Shopping, desde la comodidad de tu casa.")
 
 def registrar_usuario(request):
     if request.method == 'POST':
@@ -36,9 +18,9 @@ def registrar_usuario(request):
             registrado = True
             # Redirigir según el tipo de usuario
             if usuario.tipo_usuario == 'admin':
-                return redirect('subir_prenda')
+                return redirect('iniciar_sesion')
             else:
-                return redirect('pagina_principal')
+                return redirect('iniciar_sesion')
     else:
         form = RegistroUsuarioForm()
 
@@ -53,9 +35,8 @@ def iniciar_sesion(request):
             usuario = authenticate(request, email=email, password=contrasena)
             if usuario is not None:
                 login(request, usuario)
-                return redirect('pagina_principal')  # Redirigir a la página principal
+                return redirect('inicio')
             else:
-                # Manejar el caso de credenciales inválidas
                 return render(request, 'usuarios/inicio_sesion.html', {'form': form, 'error_message': 'Credenciales inválidas'})
     else:
         form = LoginForm()

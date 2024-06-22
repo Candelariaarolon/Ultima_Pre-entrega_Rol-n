@@ -6,5 +6,4 @@ urlpatterns = [
     path('agregar-producto/', agregar_producto, name='agregar_producto'),
     path('pagina-principal/', pagina_principal, name='pagina_principal'),
     path('iniciar-sesion/', iniciar_sesion, name='iniciar_sesion'), 
-    
 ]
